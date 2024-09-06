@@ -10,7 +10,7 @@ class Solution:
         while i >= 0 or j >= 0:
             if i >= 0 and S[i] == '#':
                 skip_s += 1
-                i -= 1
+                i -= 1  
             elif j >= 0 and T[j] == '#':
                 skip_t += 1
                 j -= 1
