@@ -1,7 +1,7 @@
 def make_board(n,queens):
     board = [[False for _ in range(n)] for _ in range(n)]
     
-    for queen in queens:
+    for _ in queens:
         for n1 in range(n):
             board[n1][i] = True            
             board[j][n1] = True

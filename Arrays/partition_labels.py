@@ -10,14 +10,15 @@ class Solution:
         for i,c in enumerate(s):
             last_index[c] = i
 
-        parts = []
+        parts = []  
         start_at = 0
         ends_at = 0
         for i,c in enumerate(s):
             last_idx = last_index[c]
             if i <= ends_at:
-                ends_at = max(last_idx,ends_at)
+                ends_at = max(last_idx,ends_at) # push ends at if you find a later index
             else:
+                # you crossed the last index , time to start a new partition!
                 parts.append(ends_at - start_at + 1)
                 ends_at = last_idx
                 start_at = i

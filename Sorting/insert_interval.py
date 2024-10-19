@@ -8,6 +8,8 @@ class Solution:
         for i,interval in enumerate(intervals):
             if newInterval[1] < interval[0]:
                 # ends before this even starts
+                # this comes before the other intervals
+                # rest of the intervals can be inserted in order
                 mergedIntervals.append(newInterval)
                 mergedIntervals.extend(intervals[i:])
                 return mergedIntervals

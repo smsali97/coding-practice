@@ -5,7 +5,9 @@ class Solution:
             if target == 0: combs.append(comb)
             if i == len(candidates) or target <= 0: return
             candidate = candidates[i]
-            rec(i,comb + [candidate], target-candidate) # allow for duplicates and pick it as well!
+            rec(i # allow for duplicates
+                ,comb + [candidate] # include that element as well
+                , target-candidate) # check for remaining target
             rec(i+1,comb,target) # never include that i again
         rec()
         return combs

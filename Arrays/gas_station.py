@@ -15,6 +15,10 @@ class Solution:
         for i in range(n):
             total_tank += gas[i] - cost[i]
             curr_tank += gas[i] - cost[i]
+            #  If the tank runs out of gas at any point,
+            # it means we can't start at the current starting_station.
+            # We reset curr_tank to 0 and update starting_station
+            # to the next station i + 1, hoping it's a viable starting point.
             if curr_tank < 0:
                 starting_station = i + 1  # Potential new starting point
                 curr_tank = 0

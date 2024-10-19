@@ -9,8 +9,7 @@ class Solution:
                 if len(stack) is 0: return False
                 c2 = stack.pop()
                 if c2 is '*':
-                    print('hi')
-                    if (not len(stack) is 0) and stack[-1] is ')':
+                    if len(stack) and stack[-1] is ')':
                         return False
                     else:
                         stack.pop()

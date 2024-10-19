@@ -11,9 +11,9 @@ class Solution:
         # also the LCA can also be if p or q is the ancestor itself
         curr = root
         while curr:
-            if curr.val < p.val and curr.val < q.val:
+            if q.val > curr.val < p.val:
                 curr = curr.right
-            elif curr.val > p.val and curr.val > q.val:
+            elif q.val < curr.val > p.val:
                 curr = curr.left
             else:
                 return curr # if current was the ancestor is also handles 

@@ -1,4 +1,13 @@
 class Solution:
+
+    # The code uses a sliding window approach.
+    # It expands the window to the right 
+    # and keeps track of the maximum count of any
+    # single character within the window. 
+    # If the number of characters that need replacement exceeds k,
+    # the window is shrunk from the left until the condition is satisfied. 
+    # The maximum window size encountered during this process is the answer.
+
     def characterReplacement(self, s: str, k: int) -> int:
         # ABAB, k = 2
 
@@ -8,14 +17,9 @@ class Solution:
         # AAA
         # AAAA (0)
         from collections import defaultdict
-        l, r, max_window = 0,0,0
+        l, r = 0,0
         counts = defaultdict(int)
-        # letters = [chr(ord('A')+i) for i in range(26)]
-        max_window = 0
-        def get_most_freq():
-            k_max, v_max = max(counts.items(),key=lambda x: x[1])
-            return (k_max, v_max)
-        
+        max_window = 0 # global max window
         max_count = 0  # Track the maximum count of any single character in the window
         while r < len(s):
             counts[s[r]] += 1
@@ -23,7 +27,6 @@ class Solution:
             max_count = max(max_count, counts[s[r]])  # Update max_count
             
             
-            # while (r-l+1) - get_most_freq()[1] > k:
             while (r-l+1) - max_count > k:
                 counts[s[l]] -= 1
                 l += 1

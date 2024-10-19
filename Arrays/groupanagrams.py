@@ -1,14 +1,12 @@
-from collections import Counter
+from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: list) -> list:
         
-        anagram_dict = {}
+        anagram_dict = defaultdict(set)
         for word in strs:
             sorted_word = ''.join(sorted(word))
-            if sorted_word in anagram_dict.keys():
-                anagram_dict[sorted_word].append(word)
-            else:
-                anagram_dict[sorted_word] = [word]
+            anagram_dict[sorted_word].add(word)
+            anagram_dict[sorted_word] = [word]
         
         return anagram_dict.values()
         

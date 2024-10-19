@@ -7,6 +7,6 @@ class Solution:
                 change = amount_required - c
                 if change < 0: continue
                 dp[amount_required] = min(1 + dp[change],dp[amount_required])
-        
+         
         return dp[-1] if dp[-1] != float('inf') else -1
 

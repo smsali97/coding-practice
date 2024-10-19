@@ -1,6 +1,13 @@
 class Solution:
     def findMaxLength(self, nums: list) -> int:
         
+        # The code leverages the concept of a prefix sum and a hashmap to efficiently 
+        # find balanced subarrays. By treating 1s as +1 and 0s as -1,
+        # the running sum curr_sum helps identify subarrays where the net change is 0,
+        # indicating an equal number of 0s and 1s. The hashmap stores the indices of 
+        # previously encountered curr_sum values, allowing for quick calculation of 
+        # subarray lengths when the same curr_sum is seen again.
+
         max_length = 0
         
         curr_sum = 0

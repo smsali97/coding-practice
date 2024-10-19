@@ -12,10 +12,12 @@ class Solution:
                 r, c = i + dx, j + dy
                 if 0 <= r < len(matrix) and 0 <= c < len(matrix[0]) and matrix[r][c] > matrix[i][j]:
                     max_dist = max(max_dist, dfs(r, c) + 1)
-
+            
+            
             cache[(i, j)] = max_dist
             nonlocal global_max
             global_max = max(global_max, max_dist)
+            
             return max_dist
 
         for i in range(len(matrix)):

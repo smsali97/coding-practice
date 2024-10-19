@@ -16,7 +16,7 @@ class Solution:
         searching = True
         t = 0
         directions = [ [-1,0],[1,0],[0,1],[0,-1]    ]
-        visited = set()
+        visited = set() 
         t = 0
         while frontier:
             # process all the frontier elements simultaenously

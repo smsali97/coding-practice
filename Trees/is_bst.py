@@ -9,7 +9,7 @@ class Solution:
         def is_valid(node, left, right):
             if not node:
                 return True
-            is_bst = node.val < right and node.val > left
+            is_bst = left < node.val < right
             if not is_bst: return False
 
             # recursive case
